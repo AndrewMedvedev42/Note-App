@@ -20,24 +20,32 @@ export const MainPage = () => {
             setNoteValue(e.target.value)
     }
 
+    function idGenerator() {
+        var S4 = function() {
+           return (((1+Math.random())*0x10)|0).toString(16).substring(1);
+        };
+        return (S4()+S4()+"-"+S4()+"-"+S4()+"-"+S4()+"-"+S4()+S4()+S4());
+    }
+
     const submitValue = () => {
         const date = new Date()
+        const id = idGenerator()
         setNoteObject({
+            id:id,
             title:noteTitle,
             value:noteValue,
             date:date.getFullYear()+'/'+(date.getMonth()+1)+'/'+date.getDate()
         })
-
     }
 
     useEffect(()=>{
         if (noteObject) {
             setArrayOfNotes((prevList)=>[noteObject, ...prevList])
+            localStorage.setItem(noteObject.id, JSON.stringify(noteObject));
         }else{
             console.log("did nothing");
         }
     },[noteObject])
-
 
     return (
         <section>

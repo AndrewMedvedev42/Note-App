@@ -4,10 +4,9 @@ import {
   } from "react-router-dom";
 
 export const ExistingNoteSlot = ({data}) => {
-    const {title, value, date} = data
+    const {id, title, value, date} = data
     return (
-        // <Router>
-        //     <Link to="/detal-view">
+            <Link to="/detal-view" onClick={()=>{console.log(title)}}>
                 <section>
                     <h3>{title}</h3>
                     <p>{value}</p>
@@ -18,7 +17,6 @@ export const ExistingNoteSlot = ({data}) => {
                         <img src="#"/>
                     </div>
                 </section>
-        //     </Link>
-        // </Router>
+            </Link>
     )
 }

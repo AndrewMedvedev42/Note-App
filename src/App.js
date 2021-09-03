@@ -5,14 +5,15 @@ import {DetalView} from "./pages/DetalView"
 import {
   BrowserRouter as Router,
   Switch,
-  Route
+  Route,
+  Link
 } from "react-router-dom";
 
 function App() {
   return (
     <Router>
       <div>
-      <NavigationBar/>
+        <NavigationBar/>
         {/* A <Switch> looks through its children <Route>s and
             renders the first one that matches the current URL. */}
         <Switch>
@@ -23,7 +24,7 @@ function App() {
             <MainPage />
           </Route>
         </Switch>
-        </div>
+      </div>
     </Router>
   );
 }
