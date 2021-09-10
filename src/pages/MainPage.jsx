@@ -1,4 +1,5 @@
 // import {CreateNewNoteField} from "../components/main-page/create-new-note-field"
+import "../styles/css/main-page.css"
 import { useEffect, useState } from "react"
 import {ExistingNoteSlot} from "../components/main-page/existing-note-slot"
 
@@ -48,22 +49,24 @@ export const MainPage = () => {
     },[noteObject])
 
     return (
-        <section>
-            <section>
-                <div>
-                    <h3>Create New Note</h3>
+        <section className="main-Container">
+            <section className="input-Section">
+                <div className="input-Container">
+                    <h1 className="title">Create New Note</h1>
                     <div>
-                        <input type="text" onChange={setTitle}/>
-                        <textarea type="text" onChange={setValue}/>
+                        <input placeholder="Title" type="text" onChange={setTitle}/>
+                        <textarea placeholder="Your Text" type="text" onChange={setValue}/>
                         <button type="submit" onClick={submitValue}>Submit</button>
                     </div>
                 </div>
             </section>
-            {arrayOfNotes.length ? (
-                arrayOfNotes.map((item)=>{
-                    return <ExistingNoteSlot data={item}/>
-                })
-            ) :<h1>Sorry, no notes</h1>}
+            <section className="existing-Note-Container">
+                {arrayOfNotes.length ? (
+                    arrayOfNotes.map((item)=>{
+                        return <ExistingNoteSlot data={item}/>
+                    })
+                ) :<h1>Sorry, no notes</h1>}
+            </section>
         </section>
     )
 }

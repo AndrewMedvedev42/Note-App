@@ -1,0 +1,4 @@
+.navContainer {
+  border: black 5px dashed;
+  display: flex;
+  justify-content: space-between; }

@@ -8,6 +8,7 @@ import {
   Route,
   Link
 } from "react-router-dom";
+import "../src/styles/css/index.css";
 
 function App() {
   return (
