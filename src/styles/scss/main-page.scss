@@ -7,7 +7,8 @@
             margin: 1rem;
             padding: 1.5rem;
             border-radius: 1rem;
-            border: black 1px solid;
+            border:black solid 0.3rem;
+            box-shadow: black 10px 10px 0px;
             .title{
                 text-align: center;
                 font-size: 1.5rem;
@@ -26,15 +27,24 @@
                     resize: none;
                 }
                 button{
+                    transition: 0.5s;
                     width: 300px;
                     margin: 1rem;
                     padding: 0.7rem;
                     border-radius: 1rem;
+                    border:black solid 0.3rem;
+                    box-shadow: black 5px 5px 0px;
+                }
+                button:hover{
+                    transform: translateY(0.7rem);
+                    box-shadow: black 0px 0px 0px;
                 }
             }
         }
     }
     .existing-Note-Container{
         display: flex;
+        flex-flow: row wrap;
+        justify-content: center;
     }
 }

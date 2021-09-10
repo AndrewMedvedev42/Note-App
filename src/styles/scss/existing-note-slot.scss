@@ -1,4 +1,15 @@
-slot{
-    margin: 1.5rem;
-    border:black solid 1px;
-}
+.slot{
+        width: 200px;
+        height: 300px;
+        margin: 1.5rem;
+        padding: 2rem;
+        border-radius: 1rem;
+        border:black solid 0.3rem;
+        display: flex;flex-direction: column;
+        justify-content: space-between;
+        box-shadow: black 10px 10px 0px;
+        .icons-container{
+            display: flex;
+            justify-content: flex-end;
+        }
+    }

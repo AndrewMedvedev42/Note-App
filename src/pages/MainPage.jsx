@@ -5,15 +5,19 @@ import {ExistingNoteSlot} from "../components/main-page/existing-note-slot"
 
 export const MainPage = () => {
 
-    const [noteTitle, setNoteTitle] = useState("")
+    const [noteTitle, setNoteTitle] = useState("Lorem ipsum")
     const [noteValue, setNoteValue] = useState("")
 
     const [noteObject, setNoteObject] = useState(null)
     const [arrayOfNotes, setArrayOfNotes] = useState([])
 
     const setTitle = (e) => {
+        if(e.target.value === "" || e.target.value === null){
+            setNoteTitle("Lorem ipsum")
+        }else{
+            setNoteTitle(e.target.value)
+        }
         // console.log(e.target.value);
-        setNoteTitle(e.target.value)
 }
 
     const setValue = (e) => {
