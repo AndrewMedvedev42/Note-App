@@ -12,8 +12,8 @@ export const ExistingNoteSlot = ({data}) => {
             <HyperLink to={`/${id}`} onClick={()=>{console.log(title)}}>
                 <section className="slot">
                     <article>
-                        <h6>{date}</h6>
-                        <h3>{title}</h3>
+                        <h4>{date}</h4>
+                        <h1>{title}</h1>
                         <p>{value}</p>
                     </article>
                     <div className="icons-container">

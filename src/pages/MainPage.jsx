@@ -52,6 +52,22 @@ export const MainPage = () => {
         }
     },[noteObject])
 
+
+    useEffect(()=>{
+        for(let i =0; i<localStorage.length; i++){
+          let key = localStorage.key(i)
+      
+          if(arrayOfNotes.some((item)=> item === key)){
+            console.log(`${key} already deployed!`)
+      
+          }else{
+            var aValue = JSON.parse(localStorage.getItem(key))
+            console.log(aValue);
+            setArrayOfNotes((prevList)=>[...prevList,aValue])
+      
+          }}
+      },[])
+
     return (
         <section className="main-Container">
             <section className="input-Section">
