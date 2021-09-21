@@ -1,4 +1,5 @@
 // import {CreateNewNoteField} from "../components/main-page/create-new-note-field"
+import "../styles/css/delete-message.css"
 import "../styles/css/main-page.css"
 import { useEffect, useState } from "react"
 import {ExistingNoteSlot} from "../components/main-page/existing-note-slot"
@@ -17,11 +18,8 @@ export const MainPage = () => {
         }else{
             setNoteTitle(e.target.value)
         }
-        // console.log(e.target.value);
 }
-
     const setValue = (e) => {
-            // console.log(e.target.value);
             setNoteValue(e.target.value)
     }
 
