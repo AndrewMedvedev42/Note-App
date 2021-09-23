@@ -3,14 +3,18 @@ import "../styles/css/delete-message.css"
 import "../styles/css/main-page.css"
 import { useEffect, useState } from "react"
 import {ExistingNoteSlot} from "../components/main-page/existing-note-slot"
+import FadeIn from 'react-fade-in';
+import {AiFillDelete} from "react-icons/ai";
 
 export const MainPage = () => {
-
     const [noteTitle, setNoteTitle] = useState("Lorem ipsum")
     const [noteValue, setNoteValue] = useState("")
-
     const [noteObject, setNoteObject] = useState(null)
+
     const [arrayOfNotes, setArrayOfNotes] = useState([])
+
+    const [deleteMessageStatus, setDeleteMessageStatus] = useState(false)
+    const [noteId, setNoteId] = useState("")
 
     const setTitle = (e) => {
         if(e.target.value === "" || e.target.value === null){
@@ -60,11 +64,17 @@ export const MainPage = () => {
       
           }else{
             var aValue = JSON.parse(localStorage.getItem(key))
-            console.log(aValue);
-            setArrayOfNotes((prevList)=>[...prevList,aValue])
+            setArrayOfNotes((prevList)=>[aValue, ...prevList])
       
           }}
       },[])
+
+    const deleteNote = (id) => {
+        const newArrayOfNotes = arrayOfNotes.filter((item) => item.id !== id)
+        localStorage.removeItem(id);
+        setArrayOfNotes(newArrayOfNotes)
+        setDeleteMessageStatus(!deleteMessageStatus)
+        } 
 
     return (
         <section className="main-Container">
@@ -78,10 +88,31 @@ export const MainPage = () => {
                     </div>
                 </div>
             </section>
+            {deleteMessageStatus && (
+
+                            <section className="deleteMessage">
+                                <FadeIn>
+                                <div className="messageContainer">
+                                    <h1>Warning</h1>
+                                    <p>Are you sure you want to delete this note?</p>
+                                    <p>{noteId}</p>
+                                    <div>
+                                        <button className="delete-button" onClick={()=>{deleteNote(noteId)}} type="submit">Delete</button>
+                                        <button type="submit" onClick={()=>{setDeleteMessageStatus(!deleteMessageStatus)}}>Back</button>
+                                    </div>
+                                </div>
+                                </FadeIn>
+                            </section>
+            )}
             <section className="existing-Note-Container">
                 {arrayOfNotes.length ? (
                     arrayOfNotes.map((item)=>{
-                        return <ExistingNoteSlot data={item}/>
+                        return (
+                        <>
+                            <AiFillDelete onClick={()=>{setDeleteMessageStatus(!deleteMessageStatus);
+                                                            setNoteId(item.id)}} size={37}/>
+                            <ExistingNoteSlot data={item}/>
+                        </>)
                     })
                 ) :<h1>Sorry, no notes</h1>}
             </section>
