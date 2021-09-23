@@ -108,11 +108,12 @@ export const MainPage = () => {
                 {arrayOfNotes.length ? (
                     arrayOfNotes.map((item)=>{
                         return (
-                        <>
+                        <FadeIn>
+
                             <AiFillDelete onClick={()=>{setDeleteMessageStatus(!deleteMessageStatus);
-                                                            setNoteId(item.id)}} size={37}/>
+                                                            setNoteId(item.id)}} size={37}/>                                                       
                             <ExistingNoteSlot data={item}/>
-                        </>)
+                        </FadeIn>)
                     })
                 ) :<h1>Sorry, no notes</h1>}
             </section>
