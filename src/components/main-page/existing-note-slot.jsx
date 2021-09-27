@@ -18,7 +18,7 @@ export const ExistingNoteSlot = ({data}) => {
                         </article>
                         <div className="icons-container">
                             <FiClipboard size={iconSize}/>
-                            <HyperLink to={`/${id}`} onClick={()=>{console.log(title)}}>
+                            <HyperLink to={`/detal-view/${id}`} onClick={()=>{console.log(title)}}>
                                 <MdModeEdit size={iconSize}/>
                             </HyperLink>
                         </div>
