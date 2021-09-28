@@ -1,4 +1,6 @@
 import {useLocation, useHistory} from "react-router-dom"
+import "../styles/css/detal-view-page.css"
+// import db from "../util/firebase";
 
 export const DetalView = () => {
 
@@ -8,16 +10,17 @@ export const DetalView = () => {
 
     const history = useHistory()
 
-    return (<section>
-                <div>   
-                    <div>
-                        <textarea placeholder="title">{noteObject.title}</textarea>
-                        <textarea placeholder="title">{noteObject.value}</textarea>
+    return (<section className="detal-view-section">
+                <div className="detal-view-container">   
+                    <div className="edit-section">
+                        <input className="title-textarea" placeholder="Title"/>
+                        <textarea className="value-textarea" placeholder="title">{noteObject.value}</textarea>
                     </div>
-                    <div>
-                    <button>Save</button>
-                    <button>Copy Text</button>
-                    <button>Delete</button>
+                    <div className="button-container">
+                        <button>Save</button>
+                        <button>Copy Text</button>
+                        <button>Delete</button>
+                        <button onClick={()=>{history.push("/")}}>Back</button>
                     </div>
                 </div>
             </section>)

@@ -1,28 +1,20 @@
 // import {CreateNewNoteField} from "../components/main-page/create-new-note-field"
 import "../styles/css/delete-message.css"
 import "../styles/css/main-page.css"
-import { useEffect, useState } from "react"
-import {ExistingNoteSlot} from "../components/main-page/existing-note-slot"
-import FadeIn from 'react-fade-in';
-import {AiFillDelete} from "react-icons/ai";
+import { useState } from "react"
+import firebase from "../util/firebase";
+import {ExistingNoteSection} from "../components/main-page/existing-note-section"
+// import FadeIn from 'react-fade-in';
+// import {AiFillDelete} from "react-icons/ai";
 
 export const MainPage = () => {
     const [noteTitle, setNoteTitle] = useState("Lorem ipsum")
     const [noteValue, setNoteValue] = useState("")
-    const [noteObject, setNoteObject] = useState(null)
-
-    const [arrayOfNotes, setArrayOfNotes] = useState([])
-
-    const [deleteMessageStatus, setDeleteMessageStatus] = useState(false)
-    const [noteId, setNoteId] = useState("")
 
     const setTitle = (e) => {
-        if(e.target.value === "" || e.target.value === null){
-            setNoteTitle("Lorem ipsum")
-        }else{
             setNoteTitle(e.target.value)
-        }
-}
+    }
+
     const setValue = (e) => {
             setNoteValue(e.target.value)
     }
@@ -34,47 +26,21 @@ export const MainPage = () => {
         return (S4()+S4()+"-"+S4()+"-"+S4()+"-"+S4()+"-"+S4()+S4()+S4());
     }
 
-    const submitValue = () => {
+    const getDate = () => {
         const date = new Date()
-        const id = idGenerator()
-        setNoteObject({
-            id:id,
-            title:noteTitle,
-            value:noteValue,
-            date:date.getFullYear()+'/'+(date.getMonth()+1)+'/'+date.getDate()
-        })
+        return date.getFullYear()+'/'+(date.getMonth()+1)+'/'+date.getDate()
     }
 
-    useEffect(()=>{
-        if (noteObject) {
-            setArrayOfNotes((prevList)=>[noteObject, ...prevList])
-            localStorage.setItem(noteObject.id, JSON.stringify(noteObject));
-        }else{
-            console.log("did nothing");
+    const submitValue = () => {
+        const fireRef = firebase.database().ref("List-Of-Notes")
+        const data = {
+            id:idGenerator(),
+            title:noteTitle,
+            value:noteValue,
+            date:getDate()
         }
-    },[noteObject])
-
-
-    useEffect(()=>{
-        for(let i =0; i<localStorage.length; i++){
-          let key = localStorage.key(i)
-      
-          if(arrayOfNotes.some((item)=> item === key)){
-            console.log(`${key} already deployed!`)
-      
-          }else{
-            var aValue = JSON.parse(localStorage.getItem(key))
-            setArrayOfNotes((prevList)=>[aValue, ...prevList])
-      
-          }}
-      },[])
-
-    const deleteNote = (id) => {
-        const newArrayOfNotes = arrayOfNotes.filter((item) => item.id !== id)
-        localStorage.removeItem(id);
-        setArrayOfNotes(newArrayOfNotes)
-        setDeleteMessageStatus(!deleteMessageStatus)
-        } 
+        fireRef.push(data)
+    }
 
     return (
         <section className="main-Container">
@@ -88,33 +54,7 @@ export const MainPage = () => {
                     </div>
                 </div>
             </section>
-            {deleteMessageStatus && (
-
-                            <section className="deleteMessage">
-                                <FadeIn>
-                                <div className="messageContainer">
-                                    <h1>Warning</h1>
-                                    <p>Are you sure you want to delete this note?</p>
-                                    <p>{noteId}</p>
-                                    <div>
-                                        <button className="delete-button" onClick={()=>{deleteNote(noteId)}} type="submit">Delete</button>
-                                        <button type="submit" onClick={()=>{setDeleteMessageStatus(!deleteMessageStatus)}}>Back</button>
-                                    </div>
-                                </div>
-                                </FadeIn>
-                            </section>
-            )}
-            <section className="existing-Note-Container">
-                {arrayOfNotes.length ? (
-                    arrayOfNotes.map((item)=>{
-                        return (<>
-                            <AiFillDelete onClick={()=>{setDeleteMessageStatus(!deleteMessageStatus);
-                                                            setNoteId(item.id)}} size={37}/>                                                       
-                            <ExistingNoteSlot data={item}/>
-                        </>)
-                    })
-                ) :<h1>Sorry, no notes</h1>}
-            </section>
+            <ExistingNoteSection/>
         </section>
     )
 }

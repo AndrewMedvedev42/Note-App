@@ -1,0 +1,30 @@
+.detal-view-section .detal-view-container {
+  display: flex;
+  margin: 2rem; }
+  .detal-view-section .detal-view-container .edit-section, .detal-view-section .detal-view-container .button-container {
+    display: flex;
+    flex-direction: column; }
+  .detal-view-section .detal-view-container .edit-section {
+    width: 80%; }
+    .detal-view-section .detal-view-container .edit-section textarea, .detal-view-section .detal-view-container .edit-section input {
+      padding: 1rem;
+      resize: none; }
+    .detal-view-section .detal-view-container .edit-section .title-textarea {
+      font-size: 3rem; }
+    .detal-view-section .detal-view-container .edit-section .value-textarea {
+      font-size: 1.5rem; }
+  .detal-view-section .detal-view-container .button-container {
+    width: 20%; }
+    .detal-view-section .detal-view-container .button-container button {
+      transition: 0.5s;
+      margin: 1rem;
+      padding: 0.7rem;
+      border-radius: 1rem;
+      border: black solid 0.3rem;
+      box-shadow: black 5px 5px 0px; }
+    .detal-view-section .detal-view-container .button-container button:hover {
+      transform: translateY(0.3rem);
+      box-shadow: black 2.5px 2.5px 0px; }
+    .detal-view-section .detal-view-container .button-container button:active {
+      transform: translateY(0.7rem);
+      box-shadow: black 0px 0px 0px; }

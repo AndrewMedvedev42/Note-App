@@ -4,7 +4,7 @@ import { BiNotepad } from "react-icons/bi";
 
 export const NavigationBar = () => {
     return (
-        <nav class="navContainer">
+        <nav className="navContainer">
             <BiNotepad size={64}/>
             <div>
                 <BsFillGearFill size={32}/>
