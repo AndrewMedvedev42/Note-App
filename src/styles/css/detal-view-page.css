@@ -12,7 +12,8 @@
     .detal-view-section .detal-view-container .edit-section .title-textarea {
       font-size: 3rem; }
     .detal-view-section .detal-view-container .edit-section .value-textarea {
-      font-size: 1.5rem; }
+      font-size: 1.5rem;
+      height: 300px; }
   .detal-view-section .detal-view-container .button-container {
     width: 20%; }
     .detal-view-section .detal-view-container .button-container button {

@@ -5,7 +5,7 @@ import { useState } from "react"
 import firebase from "../util/firebase";
 import {ExistingNoteSection} from "../components/main-page/existing-note-section"
 // import FadeIn from 'react-fade-in';
-// import {AiFillDelete} from "react-icons/ai";
+
 
 export const MainPage = () => {
     const [noteTitle, setNoteTitle] = useState("Lorem ipsum")
