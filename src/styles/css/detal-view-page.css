@@ -22,10 +22,10 @@
       padding: 0.7rem;
       border-radius: 1rem;
       border: black solid 0.3rem;
-      box-shadow: black 5px 5px 0px; }
+      box-shadow: black 0px 5px 0px; }
     .detal-view-section .detal-view-container .button-container button:hover {
       transform: translateY(0.3rem);
-      box-shadow: black 2.5px 2.5px 0px; }
+      box-shadow: black 0px 2.5px 0px; }
     .detal-view-section .detal-view-container .button-container button:active {
       transform: translateY(0.7rem);
       box-shadow: black 0px 0px 0px; }
