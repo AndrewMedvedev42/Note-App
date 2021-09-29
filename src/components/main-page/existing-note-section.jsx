@@ -57,7 +57,7 @@ export const ExistingNoteSection = () => {
                         <article>
                             <h4>{date}</h4>
                             <h1>{title}</h1>
-                            <textarea id={`text-${id}`} readonly defaultValue={value}></textarea>
+                            <textarea id={`text-${id}`} readOnly defaultValue={value}></textarea>
                         </article>
                         <div className="icons-container">
                             <FiClipboard onClick={()=>{copyText(id)}} size={iconSize}/>
