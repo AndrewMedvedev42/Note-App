@@ -37,7 +37,7 @@ export const ExistingNoteSection = () => {
 
     const iconSize = 32
     return (<section className="existing-Note-Container">  
-        {
+        {arrayOfNotes.length ? (
             arrayOfNotes.map((item)=>{
                 const {date, title, id, value, itemKey} = item
                 return (<>
@@ -60,15 +60,16 @@ export const ExistingNoteSection = () => {
                             <textarea id={`text-${id}`} readOnly defaultValue={value}></textarea>
                         </article>
                         <div className="icons-container">
-                            <FiClipboard onClick={()=>{copyText(id)}} size={iconSize}/>
+                            <FiClipboard style={{cursor:"pointer"}} onClick={()=>{copyText(id)}} size={iconSize}/>
                             <HyperLink to={`/detal-view/${itemKey}`}>
                                 <MdModeEdit size={iconSize}/>
                             </HyperLink>
-                            <AiFillDelete size={34} onClick={()=>{setDeleteMessageStatus(!deleteMessageStatus)}}/>
+                            <AiFillDelete style={{cursor:"pointer"}} size={34} onClick={()=>{setDeleteMessageStatus(!deleteMessageStatus)}}/>
                         </div>
                     </div></>
                 )
-            })}
+            })
+        ) : <h1>Sorry, you have no notes!</h1>}
     </section>)
 }
 
