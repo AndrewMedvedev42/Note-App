@@ -29,6 +29,12 @@ export const ExistingNoteSection = () => {
         return firebase.database().ref("List-Of-Notes").child(e).remove();
     }
 
+    function copyText(e) {
+        const el = document.querySelector(`#text-${e}`);
+        el.select()
+        document.execCommand("copy")
+    }
+
     const iconSize = 32
     return (<section className="existing-Note-Container">  
         {
@@ -51,10 +57,10 @@ export const ExistingNoteSection = () => {
                         <article>
                             <h4>{date}</h4>
                             <h1>{title}</h1>
-                            <p>{value}</p>
+                            <textarea id={`text-${id}`} readonly defaultValue={value}></textarea>
                         </article>
                         <div className="icons-container">
-                            <FiClipboard size={iconSize}/>
+                            <FiClipboard onClick={()=>{copyText(id)}} size={iconSize}/>
                             <HyperLink to={`/detal-view/${itemKey}`}>
                                 <MdModeEdit size={iconSize}/>
                             </HyperLink>

@@ -22,6 +22,12 @@ export const DetalView = () => {
         })
     },[])
 
+    function copyText() {
+        const el = document.querySelector(`textarea`);
+        el.select()
+        document.execCommand("copy")
+    }
+
     const history = useHistory()
     return (<section className="detal-view-section">
                 <div className="detal-view-container">   
@@ -31,7 +37,7 @@ export const DetalView = () => {
                     </div>
                     <div className="button-container">
                         <button>Save</button>
-                        <button>Copy Text</button>
+                        <button onClick={copyText}>Copy Text</button>
                         <button>Delete</button>
                         <button onClick={()=>{history.push("/")}}>Back</button>
                     </div>

@@ -8,7 +8,7 @@ import {ExistingNoteSection} from "../components/main-page/existing-note-section
 
 
 export const MainPage = () => {
-    const [noteTitle, setNoteTitle] = useState("Lorem ipsum")
+    const [noteTitle, setNoteTitle] = useState("")
     const [noteValue, setNoteValue] = useState("")
 
     const setTitle = (e) => {
@@ -46,11 +46,12 @@ export const MainPage = () => {
         <section className="main-Container">
             <section className="input-Section">
                 <div className="input-Container">
-                    <h1 className="title">Create New Note</h1>
                     <div>
-                        <input placeholder="Title" type="text" onChange={setTitle}/>
-                        <textarea placeholder="Your Text" type="text" onChange={setValue}/>
-                        <button type="submit" onClick={submitValue}>Submit</button>
+                        <div className="inputFields">
+                            <input placeholder="Title" type="text" onChange={setTitle}/>
+                            <textarea placeholder="Your Text" type="text" onChange={setValue}/>
+                        </div>
+                        <button type="submit" onClick={submitValue}>Create new note</button>
                     </div>
                 </div>
             </section>

@@ -8,6 +8,19 @@
         display: flex;flex-direction: column;
         justify-content: space-between;
         box-shadow: black 10px 10px 0px;
+        article{
+            textarea{
+                border: none;
+                overflow: auto;
+                outline: none;
+
+                -webkit-box-shadow: none;
+                -moz-box-shadow: none;
+                box-shadow: none;
+                background-color: white;
+                resize: none;
+            }
+        }
         .icons-container{
             display: flex;
             justify-content: flex-end;

@@ -8,9 +8,6 @@
     border-radius: 1rem;
     border: black solid 0.3rem;
     box-shadow: black 10px 10px 0px; }
-    .main-Container .input-Section .input-Container .title {
-      text-align: center;
-      font-size: 1.5rem; }
     .main-Container .input-Section .input-Container div {
       display: flex;
       flex-direction: column;
@@ -19,7 +16,10 @@
         width: 350px;
         height: 30px;
         padding: 0.5rem;
-        font-size: large; }
+        font-size: large;
+        border: none;
+        border-bottom: #bebebe 1px solid;
+        outline: none; }
       .main-Container .input-Section .input-Container div textarea {
         resize: none; }
       .main-Container .input-Section .input-Container div button {
