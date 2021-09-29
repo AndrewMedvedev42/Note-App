@@ -8,6 +8,9 @@
     border-radius: 1rem;
     border: black solid 0.3rem;
     box-shadow: black 10px 10px 0px; }
+    .main-Container .input-Section .input-Container .mainTitle {
+      font-size: 1.5rem;
+      font-weight: bolder; }
     .main-Container .input-Section .input-Container div {
       display: flex;
       flex-direction: column;
@@ -29,10 +32,10 @@
         padding: 0.7rem;
         border-radius: 1rem;
         border: black solid 0.3rem;
-        box-shadow: black 5px 5px 0px; }
+        box-shadow: black 0px 5px 0px; }
       .main-Container .input-Section .input-Container div button:hover {
         transform: translateY(0.3rem);
-        box-shadow: black 2.5px 2.5px 0px; }
+        box-shadow: black 0px 2.5px 0px; }
       .main-Container .input-Section .input-Container div button:active {
         transform: translateY(0.7rem);
         box-shadow: black 0px 0px 0px; }

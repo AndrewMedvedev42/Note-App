@@ -47,6 +47,7 @@ export const MainPage = () => {
             <section className="input-Section">
                 <div className="input-Container">
                     <div>
+                        <h3 className="mainTitle">Create New Note</h3>
                         <div className="inputFields">
                             <input placeholder="Title" type="text" onChange={setTitle}/>
                             <textarea placeholder="Your Text" type="text" onChange={setValue}/>
