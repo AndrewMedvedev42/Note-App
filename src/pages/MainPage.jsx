@@ -37,7 +37,8 @@ export const MainPage = () => {
             id:idGenerator(),
             title:noteTitle,
             value:noteValue,
-            date:getDate()
+            date:getDate(),
+            note_color:""
         }
         fireRef.push(data)
     }
@@ -47,12 +48,11 @@ export const MainPage = () => {
             <section className="input-Section">
                 <div className="input-Container">
                     <div>
-                        <h3 className="mainTitle">Create New Note</h3>
                         <div className="inputFields">
                             <input placeholder="Title" type="text" onChange={setTitle}/>
-                            <textarea placeholder="Your Text" type="text" onChange={setValue}/>
+                            <textarea placeholder="Type text here..." type="text" onChange={setValue}/>
                         </div>
-                        <button type="submit" onClick={submitValue}>Create new note</button>
+                        <button type="submit" onClick={submitValue}>Submit</button>
                     </div>
                 </div>
             </section>

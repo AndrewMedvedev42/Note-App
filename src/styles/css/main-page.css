@@ -8,9 +8,6 @@
     border-radius: 1rem;
     border: black solid 0.3rem;
     box-shadow: black 10px 10px 0px; }
-    .main-Container .input-Section .input-Container .mainTitle {
-      font-size: 1.5rem;
-      font-weight: bolder; }
     .main-Container .input-Section .input-Container div {
       display: flex;
       flex-direction: column;

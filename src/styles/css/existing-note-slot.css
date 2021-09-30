@@ -9,6 +9,9 @@
   flex-direction: column;
   justify-content: space-between;
   box-shadow: black 10px 10px 0px; }
+  .slot article .note-title {
+    font-size: 3rem;
+    margin: 0 1rem; }
   .slot article textarea {
     border: none;
     overflow: auto;

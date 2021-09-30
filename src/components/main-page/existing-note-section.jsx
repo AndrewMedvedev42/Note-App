@@ -6,11 +6,12 @@ import styled from 'styled-components';
   import firebase from "../../util/firebase";
 import { useEffect, useState } from "react";
 import {AiFillDelete} from "react-icons/ai";
+import { Textfit } from 'react-textfit';
 
 export const ExistingNoteSection = () => {
 
     const [arrayOfNotes, setArrayOfNotes] = useState([])
-    const [deleteMessageStatus, setDeleteMessageStatus] = useState(false)
+    // const [deleteMessageStatus, setDeleteMessageStatus] = useState(false)
 
     useEffect(()=>{
         const fireRef = firebase.database().ref("List-Of-Notes")
@@ -25,8 +26,12 @@ export const ExistingNoteSection = () => {
         })
     },[])
 
+    console.log(arrayOfNotes);
+
     const deleteNote = (e) => {
-        return firebase.database().ref("List-Of-Notes").child(e).remove();
+        if (window.confirm(`Delete this note?`)) {
+            firebase.database().ref("List-Of-Notes").child(e).remove();
+          }
     }
 
     function copyText(e) {
@@ -39,32 +44,22 @@ export const ExistingNoteSection = () => {
     return (<section className="existing-Note-Container">  
         {arrayOfNotes.length ? (
             arrayOfNotes.map((item)=>{
-                const {date, title, id, value, itemKey} = item
+                const {date, title, id, value, itemKey, note_color} = item
                 return (<>
-                    {deleteMessageStatus && (
-                        <section className="deleteMessage">
-                            <div className="messageContainer">
-                                <h1>Warning</h1>
-                                <p>Are you sure you want to delete this note?</p>
-                                <div>
-                                    <button className="delete-button" stype="submit" onClick={()=>{setDeleteMessageStatus(!deleteMessageStatus); deleteNote(itemKey)}}>Delete</button>
-                                    <button type="submit" onClick={()=>{setDeleteMessageStatus(!deleteMessageStatus)}}>Back</button>
-                                </div>
-                            </div>
-                        </section>
-                        )}
-                    <div key={id} className="slot">
+                    <div key={id} style={{backgroundColor:note_color}} className="slot">
                         <article>
-                            <h4>{date}</h4>
-                            <h1>{title}</h1>
-                            <textarea id={`text-${id}`} readOnly defaultValue={value}></textarea>
+                        <h6>{date}</h6>
+                        <Textfit className="note-title" mode="multi">
+                            {title}
+                        </Textfit>
+                            <textarea id={`text-${id}`} readOnly defaultValue={value} style={{backgroundColor:note_color}}></textarea>
                         </article>
                         <div className="icons-container">
                             <FiClipboard style={{cursor:"pointer"}} onClick={()=>{copyText(id)}} size={iconSize}/>
                             <HyperLink to={`/detal-view/${itemKey}`}>
                                 <MdModeEdit size={iconSize}/>
                             </HyperLink>
-                            <AiFillDelete style={{cursor:"pointer"}} size={34} onClick={()=>{setDeleteMessageStatus(!deleteMessageStatus)}}/>
+                            <AiFillDelete style={{cursor:"pointer"}} onClick={()=>{deleteNote(itemKey)}} size={34}/>
                         </div>
                     </div></>
                 )
