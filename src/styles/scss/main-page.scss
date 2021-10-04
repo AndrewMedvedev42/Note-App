@@ -1,3 +1,5 @@
+@import "./colors.scss";
+
 .main-Container{
     .input-Section{
         display: flex;
@@ -7,40 +9,56 @@
             margin: 1rem;
             padding: 1.5rem;
             border-radius: 1rem;
-            border:black solid 0.3rem;
-            box-shadow: black 10px 10px 0px;
+            background-color: $first-color;
             div{
                 display: flex;
                 flex-direction: column;
                 align-items: center;
                 input,textarea{
+                    color: $second-color;
                     width: 350px;
                     height: 30px;
                     padding: 0.5rem;
-                    font-size: large;
+                    font-size: 1.3rem;
                     border: none;
-                    border-bottom: rgb(190, 190, 190) 1px solid;
+                    background-color: $first-color;
+                    border-bottom: $second-color solid 2px;
                     outline: none;
+                }
+                input::placeholder,textarea::placeholder{
+                    color: $second-color;
+                    opacity: 0.5;
                 }
                 textarea{
                     resize: none;
                 }
                 button{
+                    color: $base-color;
+                    font-weight: bolder;
+                    font-size: large;
                     transition: 0.5s;
                     width: 200px;
                     margin: 1rem;
-                    padding: 0.7rem;
-                    border-radius: 1rem;
-                    border:black solid 0.3rem;
-                    box-shadow: black 0px 5px 0px;
+                    padding: 1rem;
+                    border-radius: 2rem;
+                    border: none;
+                    background-color: $second-color;
                 }
                 button:hover{
                     transform: translateY(0.3rem);
-                    box-shadow: black 0px 2.5px 0px;
                 }
                 button:active{
                     transform: translateY(0.7rem);
-                    box-shadow: black 0px 0px 0px;
+                }
+            }
+        }
+        @media (max-width: 450px){
+            .input-Container{
+                width: 300px;
+                div{
+                    input,textarea{
+                        width: 90%;
+                    }
                 }
             }
         }
@@ -51,3 +69,4 @@
         justify-content: center;
     }
 }
+

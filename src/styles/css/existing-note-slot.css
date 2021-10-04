@@ -4,24 +4,30 @@
   margin: 1.5rem;
   padding: 2rem;
   border-radius: 1rem;
-  border: black solid 0.3rem;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  box-shadow: black 10px 10px 0px; }
-  .slot article .note-title {
-    font-size: 3rem;
-    margin: 0 1rem; }
-  .slot article textarea {
-    border: none;
-    overflow: auto;
-    outline: none;
-    -webkit-box-shadow: none;
-    -moz-box-shadow: none;
-    box-shadow: none;
-    background-color: white;
-    resize: none; }
+  background-color: #FF6363; }
+  .slot article {
+    color: #202040; }
+    .slot article .note-title {
+      height: 80px;
+      font-size: 3rem;
+      margin: 1rem 0rem; }
+    .slot article textarea {
+      height: 100px;
+      color: #202040;
+      border: none;
+      overflow: auto;
+      outline: none;
+      background-color: #FF6363;
+      -webkit-box-shadow: none;
+      -moz-box-shadow: none;
+      box-shadow: none;
+      resize: none; }
   .slot .icons-container {
     display: flex;
     justify-content: flex-end;
     align-items: center; }
+    .slot .icons-container * {
+      color: #202040; }

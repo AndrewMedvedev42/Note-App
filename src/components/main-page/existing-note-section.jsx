@@ -44,15 +44,15 @@ export const ExistingNoteSection = () => {
     return (<section className="existing-Note-Container">  
         {arrayOfNotes.length ? (
             arrayOfNotes.map((item)=>{
-                const {date, title, id, value, itemKey, note_color} = item
+                const {date, title, id, value, itemKey} = item
                 return (<>
-                    <div key={id} style={{backgroundColor:note_color}} className="slot">
+                    <div key={id} className="slot">
                         <article>
                         <h6>{date}</h6>
                         <Textfit className="note-title" mode="multi">
                             {title}
                         </Textfit>
-                            <textarea id={`text-${id}`} readOnly defaultValue={value} style={{backgroundColor:note_color}}></textarea>
+                            <textarea id={`text-${id}`} readOnly defaultValue={value} ></textarea>
                         </article>
                         <div className="icons-container">
                             <FiClipboard style={{cursor:"pointer"}} onClick={()=>{copyText(id)}} size={iconSize}/>

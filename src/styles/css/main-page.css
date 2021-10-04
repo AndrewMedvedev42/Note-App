@@ -6,36 +6,46 @@
     margin: 1rem;
     padding: 1.5rem;
     border-radius: 1rem;
-    border: black solid 0.3rem;
-    box-shadow: black 10px 10px 0px; }
+    background-color: #543864; }
     .main-Container .input-Section .input-Container div {
       display: flex;
       flex-direction: column;
       align-items: center; }
       .main-Container .input-Section .input-Container div input, .main-Container .input-Section .input-Container div textarea {
+        color: #FFBD69;
         width: 350px;
         height: 30px;
         padding: 0.5rem;
-        font-size: large;
+        font-size: 1.3rem;
         border: none;
-        border-bottom: #bebebe 1px solid;
+        background-color: #543864;
+        border-bottom: #FFBD69 solid 2px;
         outline: none; }
+      .main-Container .input-Section .input-Container div input::placeholder, .main-Container .input-Section .input-Container div textarea::placeholder {
+        color: #FFBD69;
+        opacity: 0.5; }
       .main-Container .input-Section .input-Container div textarea {
         resize: none; }
       .main-Container .input-Section .input-Container div button {
+        color: #202040;
+        font-weight: bolder;
+        font-size: large;
         transition: 0.5s;
         width: 200px;
         margin: 1rem;
-        padding: 0.7rem;
-        border-radius: 1rem;
-        border: black solid 0.3rem;
-        box-shadow: black 0px 5px 0px; }
+        padding: 1rem;
+        border-radius: 2rem;
+        border: none;
+        background-color: #FFBD69; }
       .main-Container .input-Section .input-Container div button:hover {
-        transform: translateY(0.3rem);
-        box-shadow: black 0px 2.5px 0px; }
+        transform: translateY(0.3rem); }
       .main-Container .input-Section .input-Container div button:active {
-        transform: translateY(0.7rem);
-        box-shadow: black 0px 0px 0px; }
+        transform: translateY(0.7rem); }
+  @media (max-width: 450px) {
+    .main-Container .input-Section .input-Container {
+      width: 300px; }
+      .main-Container .input-Section .input-Container div input, .main-Container .input-Section .input-Container div textarea {
+        width: 90%; } }
 
 .main-Container .existing-Note-Container {
   display: flex;
