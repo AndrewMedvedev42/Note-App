@@ -47,13 +47,9 @@ export const MainPage = () => {
         <section className="main-Container">
             <section className="input-Section">
                 <div className="input-Container">
-                    <div>
-                        <div className="inputFields">
                             <input placeholder="Title" type="text" onChange={setTitle}/>
                             <textarea placeholder="Type text here..." type="text" onChange={setValue}/>
-                        </div>
                         <button type="submit" onClick={submitValue}>Submit</button>
-                    </div>
                 </div>
             </section>
             <ExistingNoteSection/>

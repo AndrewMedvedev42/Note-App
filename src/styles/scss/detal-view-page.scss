@@ -1,3 +1,5 @@
+@import "./colors.scss";
+
 .detal-view-section{
     .detal-view-container{
         display: flex;
@@ -7,13 +9,21 @@
             flex-direction: column;
         }
         .edit-section{
+            border-radius:1rem;
+            overflow: hidden;
+            margin-bottom: 2rem;
+
             width: 80%;
             textarea, input{
                 padding: 1rem;
                 resize: none;
+                color: $base-color;
+                background-color: $third-color;
+                border: none;
             };
             .title-textarea{
                 font-size: 3rem;
+                border-bottom: $base-color 5px solid;
             }
             .value-textarea{
                 font-size: 1.5rem;
@@ -23,20 +33,32 @@
         .button-container{
             width: 20%;
             button{
-                transition: 0.5s;
-                margin: 1rem;
-                padding: 0.7rem;
-                border-radius: 1rem;
-                border:black solid 0.3rem;
-                box-shadow: black 0px 5px 0px;
+                border:none;
             }
-            button:hover{
-                transform: translateY(0.3rem);
-                box-shadow: black 0px 2.5px 0px;
+        }
+    }
+}
+
+@media only screen and (max-width: 600px) {
+    .detal-view-section{
+        .detal-view-container{
+            display: flex;
+            flex-direction: column;
+            margin: 2rem;
+            .edit-section, .button-container{
+                display: flex;
+                flex-direction: column;
             }
-            button:active{
-                transform: translateY(0.7rem);
-                box-shadow: black 0px 0px 0px;
+            .edit-section{
+                border-radius:1rem;
+                overflow: hidden;
+                width: 100%;
+            }
+            .button-container{
+                width: 100%;
+                button{
+                    border:none;
+                }
             }
         }
     }

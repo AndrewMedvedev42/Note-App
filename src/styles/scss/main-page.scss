@@ -5,14 +5,15 @@
         display: flex;
         justify-content: center;
         .input-Container{
-            width: 400px;
-            margin: 1rem;
-            padding: 1.5rem;
+            // width: 400px;
+            margin: 1rem 1rem 2rem;
+            padding: 1rem;
             border-radius: 1rem;
             background-color: $first-color;
-            div{
+            //     border: teal 5px solid;
                 display: flex;
                 flex-direction: column;
+                justify-content: center;
                 align-items: center;
                 input,textarea{
                     color: $second-color;
@@ -33,33 +34,18 @@
                     resize: none;
                 }
                 button{
-                    color: $base-color;
-                    font-weight: bolder;
-                    font-size: large;
-                    transition: 0.5s;
+                    margin-top: 1rem;
                     width: 200px;
-                    margin: 1rem;
-                    padding: 1rem;
-                    border-radius: 2rem;
                     border: none;
-                    background-color: $second-color;
                 }
-                button:hover{
-                    transform: translateY(0.3rem);
-                }
-                button:active{
-                    transform: translateY(0.7rem);
-                }
-            }
+            
         }
         @media (max-width: 450px){
             .input-Container{
                 width: 300px;
-                div{
                     input,textarea{
                         width: 90%;
                     }
-                }
             }
         }
     }

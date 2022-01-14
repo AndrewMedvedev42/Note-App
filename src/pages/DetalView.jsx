@@ -49,7 +49,7 @@ export const DetalView = () => {
         {deleteMessageStatus && (
             <section className="deleteMessage">
                 <div className="messageContainer">
-                    <h1>Warning</h1>
+                    <h1>Warning!!!</h1>
                     <p>Are you sure you want to delete this note?</p>
                     <div>
                         <button className="delete-button" stype="submit" onClick={()=>{setDeleteMessageStatus(!deleteMessageStatus); deleteNote(noteID)}}>Delete</button>

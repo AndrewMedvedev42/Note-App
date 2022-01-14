@@ -35,3 +35,31 @@ body{
     margin: 0;
 	font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }
+
+.white-black-shadow-container{
+	margin: 1.5rem;
+	padding: 2rem;
+	background-color: rgb(153, 62, 62);
+	border-radius: 1rem;
+	border:black solid 0.3rem;
+	box-shadow: black 10px 10px 0px;
+}
+
+button{
+	color: $base-color;
+	font-weight: bolder;
+	font-size: large;
+	transition: 0.5s;
+	margin: 0rem 1rem 1rem;
+	padding: 1rem;
+	border-radius: 2rem;
+	background-color: $second-color;
+}
+
+button:hover{
+	transform: translateY(0.3rem);
+}
+
+button:active{
+	transform: translateY(0.7rem);
+}

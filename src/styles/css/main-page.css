@@ -2,49 +2,37 @@
   display: flex;
   justify-content: center; }
   .main-Container .input-Section .input-Container {
-    width: 400px;
-    margin: 1rem;
-    padding: 1.5rem;
+    margin: 1rem 1rem 2rem;
+    padding: 1rem;
     border-radius: 1rem;
-    background-color: #543864; }
-    .main-Container .input-Section .input-Container div {
-      display: flex;
-      flex-direction: column;
-      align-items: center; }
-      .main-Container .input-Section .input-Container div input, .main-Container .input-Section .input-Container div textarea {
-        color: #FFBD69;
-        width: 350px;
-        height: 30px;
-        padding: 0.5rem;
-        font-size: 1.3rem;
-        border: none;
-        background-color: #543864;
-        border-bottom: #FFBD69 solid 2px;
-        outline: none; }
-      .main-Container .input-Section .input-Container div input::placeholder, .main-Container .input-Section .input-Container div textarea::placeholder {
-        color: #FFBD69;
-        opacity: 0.5; }
-      .main-Container .input-Section .input-Container div textarea {
-        resize: none; }
-      .main-Container .input-Section .input-Container div button {
-        color: #202040;
-        font-weight: bolder;
-        font-size: large;
-        transition: 0.5s;
-        width: 200px;
-        margin: 1rem;
-        padding: 1rem;
-        border-radius: 2rem;
-        border: none;
-        background-color: #FFBD69; }
-      .main-Container .input-Section .input-Container div button:hover {
-        transform: translateY(0.3rem); }
-      .main-Container .input-Section .input-Container div button:active {
-        transform: translateY(0.7rem); }
+    background-color: #543864;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center; }
+    .main-Container .input-Section .input-Container input, .main-Container .input-Section .input-Container textarea {
+      color: #FFBD69;
+      width: 350px;
+      height: 30px;
+      padding: 0.5rem;
+      font-size: 1.3rem;
+      border: none;
+      background-color: #543864;
+      border-bottom: #FFBD69 solid 2px;
+      outline: none; }
+    .main-Container .input-Section .input-Container input::placeholder, .main-Container .input-Section .input-Container textarea::placeholder {
+      color: #FFBD69;
+      opacity: 0.5; }
+    .main-Container .input-Section .input-Container textarea {
+      resize: none; }
+    .main-Container .input-Section .input-Container button {
+      margin-top: 1rem;
+      width: 200px;
+      border: none; }
   @media (max-width: 450px) {
     .main-Container .input-Section .input-Container {
       width: 300px; }
-      .main-Container .input-Section .input-Container div input, .main-Container .input-Section .input-Container div textarea {
+      .main-Container .input-Section .input-Container input, .main-Container .input-Section .input-Container textarea {
         width: 90%; } }
 
 .main-Container .existing-Note-Container {
